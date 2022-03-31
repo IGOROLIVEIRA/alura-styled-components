@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ImageFilter from '../ImageFilter';
 import Item from '../Item';
 
 const Items = styled.div`
@@ -15,8 +16,11 @@ const Items = styled.div`
 
 
 export default (props) => {
-  return <Items>
+  return (
+  <Items>
+    {ImageFilter(props.type)}
     <Item {...props} />
     <span>{props.date}</span>
   </Items>
+  )
 }
